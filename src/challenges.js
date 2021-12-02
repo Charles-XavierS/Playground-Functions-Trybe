@@ -17,7 +17,7 @@ function splitSentence(strings) {
   return array;
 }
 
-// Desafio 4
+// Desafio 4 Referencia (https://eslint.org/docs/rules/prefer-template)
 function concatName(arrayStrings) {
   return `${arrayStrings[arrayStrings.length - 1]}, ${arrayStrings[0]}`;
 }
@@ -64,12 +64,22 @@ function fizzBuzz(numeros) {
   return novaArray;
 }
 
-// Desafio 9
-function encode() {
-  // seu código aqui
+// Desafio 9 // referencia (https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176)
+function encode(letrasNum) {
+  letrasNum = letrasNum.replace(/a/g, '1');
+  letrasNum = letrasNum.replace(/e/g, '2');
+  letrasNum = letrasNum.replace(/i/g, '3');
+  letrasNum = letrasNum.replace(/o/g, '4');
+  letrasNum = letrasNum.replace(/u/g, '5');
+  return letrasNum;
 }
-function decode() {
-  // seu código aqui
+function decode(numLetras) {
+  numLetras = numLetras.replace(/1/g, 'a');
+  numLetras = numLetras.replace(/2/g, 'e');
+  numLetras = numLetras.replace(/3/g, 'i');
+  numLetras = numLetras.replace(/4/g, 'o');
+  numLetras = numLetras.replace(/5/g, 'u');
+  return numLetras;
 }
 
 module.exports = {
