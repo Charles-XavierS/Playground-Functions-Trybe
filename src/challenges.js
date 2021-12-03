@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 // Desafio 1
 function compareTrue(valor1, valor2) {
   if (valor1 === true && valor2 === true) {
@@ -13,8 +14,8 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(strings) {
-  let array = strings.split(' ');
-  return array;
+  let arrayNum = strings.split(' ');
+  return arrayNum;
 }
 
 // Desafio 4 Referencia (https://eslint.org/docs/rules/prefer-template)
@@ -24,18 +25,29 @@ function concatName(arrayStrings) {
 
 // Desafio 5
 function footballPoints(wins, ties) {
-  return (wins * 3) + ties;
+  return wins * 3 + ties * 1;
 }
 
-// Desafio 6
-function highestCount() {
-  // seu código aqui
+// Desafio 6 Referencia (https://www.ti-enxame.com/pt/javascript/como-o-math.max.apply-funciona/1043928842/)
+function highestCount(arrayNum) {
+  let numeros = 0;
+  let numRepetido = 0;
+  numeros = Math.max.apply(null, arrayNum);
+  for (let index = 0; index < arrayNum.length; index += 1) {
+    if (numeros === arrayNum[index]) {
+      numRepetido += 1;
+    } else if (numeros === 0) {
+      numRepetido += 1;
+      return numRepetido;
+    }
+  }
+  return numRepetido;
 }
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  let valor1 = (mouse - cat1);
-  let valor2 = (mouse - cat2);
+  let valor1 = mouse - cat1;
+  let valor2 = mouse - cat2;
   let resultado = '';
   if (valor1 === valor2 * -1) {
     resultado = 'os gatos trombam e o rato foge';
@@ -50,12 +62,12 @@ function catAndMouse(mouse, cat1, cat2) {
 // Desafio 8
 function fizzBuzz(numeros) {
   let novaArray = [];
-  for (let key of numeros) {
-    if (key % 3 === 0 && key % 5 === 0) {
+  for (let index = 0; index < numeros.length; index += 1) {
+    if (numeros[index] % 3 === 0 && numeros[index] % 5 === 0) {
       novaArray.push('fizzBuzz');
-    } else if (key % 3 === 0) {
+    } else if (numeros[index] % 3 === 0) {
       novaArray.push('fizz');
-    } else if (key % 5 === 0) {
+    } else if (numeros[index] % 5 === 0) {
       novaArray.push('buzz');
     } else {
       novaArray.push('bug!');
