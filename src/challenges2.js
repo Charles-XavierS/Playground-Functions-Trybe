@@ -1,6 +1,17 @@
 // Desafio 10
-function techList(techList, name) {
-  
+function techList(arrayNomes, nome) {
+  let listaObjetos = [];
+  if (arrayNomes.length === 0) {
+    return 'Vazio!';
+  }
+  for (let key of arrayNomes.sort()) {
+    let objeto = {
+      tech: key,
+      name: nome,
+    };
+    listaObjetos.push(objeto);
+  }
+  return listaObjetos;
 }
 
 // Desafio 11
@@ -29,22 +40,15 @@ function triangleCheck(lineA, lineB, lineC) {
 
 // Desafio 13
 function hydrate(string) {
-  // seu código aqui
-  let isInteger = /\d+/g; // cria uma variavel que identifica dígitos  
-  let matches = string.match(isInteger); // .match compara a variável de digitos isInteger com a string dada como parametro e armazena as coincidencias na lista matches 
-  let glassOfWater = 0;
-
-  for (let i = 0; i < matches.length; i += 1) {
-    matches[i] = parseInt(matches[i], 10);
+  let numbers = string.match(/\d+/g).map(Number);
+  let copos = 0;
+  for (let key of numbers) {
+    copos += key;
   }
-
-  for (let k = 0; k < matches.length; k += 1) {
-    glassOfWater += matches[k];
+  if (copos === 1) {
+    return `${copos} copo de água`;
   }
-  if (glassOfWater === 1) {
-    return `${glassOfWater} copo de água`;
-  }
-  return `${glassOfWater} copos de água`;
+  return `${copos} copos de água`;
 }
 
 module.exports = {
