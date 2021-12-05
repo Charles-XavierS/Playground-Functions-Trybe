@@ -4,7 +4,7 @@ function techList(arrayNomes, name) {
   arrayNomes.sort(); // ordenar a lista
 
   for (let index = 0; index < arrayNomes.length; index += 1) {
-    listaObjetos.push({ tech: arrayNomes[index], name }); // objeto criado dentro da posição a cada iteração
+    listaObjetos.push({ tech: arrayNomes[index], name });
   }
 
   if (listaObjetos.length > 0) {
@@ -14,9 +14,8 @@ function techList(arrayNomes, name) {
 }
 
 // Desafio 11
-function generatePhoneNumber(arrayNumeros) {
+function generatePhoneNumber() {
   // gerar os numeros
-
 }
 
 // Desafio 12
@@ -40,7 +39,7 @@ function triangleCheck(lineA, lineB, lado3) {
 
 // Desafio 13 Referencia https://codereview.stackexchange.com/questions/115885/extract-numbers-from-a-string-javascript
 function hydrate(string) {
-  let numeros = string.match(/\d+/g).map(Number); // O match procura por números (\d), sem parar no primeiro encontrado (flag g). Map para deixar os números como números ao inves de string.
+  let numeros = string.match(/\d+/g).map(Number);
   let copos = 0;
 
   for (let contador of numeros) {
