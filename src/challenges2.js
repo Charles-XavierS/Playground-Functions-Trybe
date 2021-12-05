@@ -1,49 +1,50 @@
 // Desafio 10
-function techList(arrayNomes, nome) {
+function techList(arrayNomes, name) {
   let listaObjetos = [];
-  if (arrayNomes.length === 0) {
-    return 'Vazio!';
+  arrayNomes.sort(); // ordenar a lista
+
+  for (let index = 0; index < arrayNomes.length; index += 1) {
+    listaObjetos.push({ tech: arrayNomes[index], name }); // objeto criado dentro da posição a cada iteração
   }
-  for (let key of arrayNomes.sort()) {
-    let objeto = {
-      tech: key,
-      name: nome,
-    };
-    listaObjetos.push(objeto);
+
+  if (listaObjetos.length > 0) {
+    return listaObjetos;
   }
-  return listaObjetos;
+  return 'Vazio!';
 }
 
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generatePhoneNumber(arrayNumeros) {
+  // gerar os numeros
+
 }
 
 // Desafio 12
 // eslint-disable-next-line complexity
-function triangleCheck(lineA, lineB, lineC) {
+function triangleCheck(lineA, lineB, lado3) {
   // seu código aqui
-  let check = 0;
-  let result = false;
+  let contador = 0;
+  let resultado = false;
 
-  if (lineA < lineB + lineC && lineA > Math.abs(lineB - lineC)) {
-    check += 1;
+  if (lineA < lineB + lado3 && lineA > Math.abs(lineB - lado3)) {
+    contador += 1;
   }
-  if (lineB < lineA + lineC && lineB > Math.abs(lineA - lineC)) {
-    check += 1;
+  if (lineB < lineA + lado3 && lineB > Math.abs(lineA - lado3)) {
+    contador += 1;
   }
-  if (check === 2) {
-    result = true;
+  if (contador === 2) {
+    resultado = true;
   }
-  return result;
+  return resultado;
 }
 
-// Desafio 13
+// Desafio 13 Referencia https://codereview.stackexchange.com/questions/115885/extract-numbers-from-a-string-javascript
 function hydrate(string) {
-  let numbers = string.match(/\d+/g).map(Number);
+  let numeros = string.match(/\d+/g).map(Number); // O match procura por números (\d), sem parar no primeiro encontrado (flag g). Map para deixar os números como números ao inves de string.
   let copos = 0;
-  for (let key of numbers) {
-    copos += key;
+
+  for (let contador of numeros) {
+    copos += contador;
   }
   if (copos === 1) {
     return `${copos} copo de água`;
