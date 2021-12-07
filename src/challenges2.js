@@ -20,15 +20,13 @@ function generatePhoneNumber(arrayNumeros) {
   }
 
   for (let i = 0; i < arrayNumeros.length; i += 1) {
-    for (let j = 1; j < arrayNumeros.length; j += 1) {
-      if ([i] === [j]) {
-        return 'não é possível gerar um número de telefone com esses valores';
+    let contador = 0;
+    for (let j = 0; j < arrayNumeros.length; j += 1) {
+      if (arrayNumeros[i] === arrayNumeros[j]) {
+        contador += 1;
       }
     }
-  }
-
-  for (let numeros of arrayNumeros) {
-    if (numeros < 0 || numeros > 9) {
+    if (arrayNumeros[i] > 9 || arrayNumeros[i] < 0 || contador >= 3) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
   }
