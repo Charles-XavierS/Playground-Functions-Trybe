@@ -52,7 +52,7 @@ function triangleCheck(lineA, lineB, lado3) {
   return resultado;
 }
 
-// Desafio 13 Referencia https://codereview.stackexchange.com/questions/115885/extract-numbers-from-a-string-javascript
+// Desafio 13 // Referencia - https://codereview.stackexchange.com/questions/115885/extract-numbers-from-a-string-javascript
 function hydrate(string) {
   let numeros = string.match(/\d+/g).map(Number);
   let copos = 0;

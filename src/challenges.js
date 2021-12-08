@@ -18,7 +18,7 @@ function splitSentence(strings) {
   return arrayNum;
 }
 
-// Desafio 4 Referencia (https://eslint.org/docs/rules/prefer-template)
+// Desafio 4 // Referencia - https://eslint.org/docs/rules/prefer-template
 function concatName(arrayStrings) {
   return `${arrayStrings[arrayStrings.length - 1]}, ${arrayStrings[0]}`;
 }
@@ -28,7 +28,7 @@ function footballPoints(wins, ties) {
   return wins * 3 + ties * 1;
 }
 
-// Desafio 6 Referencia (https://www.ti-enxame.com/pt/javascript/como-o-math.max.apply-funciona/1043928842/)
+// Desafio 6 // Referencia - https://www.ti-enxame.com/pt/javascript/como-o-math.max.apply-funciona/1043928842/
 function highestCount(arrayNum) {
   let numeros = 0;
   let numRepetido = 0;
@@ -76,7 +76,7 @@ function fizzBuzz(numeros) {
   return novaArray;
 }
 
-// Desafio 9 // referencia (https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176)
+// Desafio 9 // referencia - https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
 function encode(letrasNum) {
   letrasNum = letrasNum.replace(/a/g, '1');
   letrasNum = letrasNum.replace(/e/g, '2');
